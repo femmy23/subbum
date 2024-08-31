@@ -6,6 +6,8 @@ React Query is Used for Linking and navigation of the Application, Also React Ic
 
 ******* Click on the User Icon on the top right corner to navigate to the profile Page **********
 
+*****Use Only on a Desktop Not Mobile Friendly******
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
