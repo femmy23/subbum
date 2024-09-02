@@ -52,7 +52,7 @@ export default function SideNav() {
         <LogoImg src="./logo.png" alt="" />
       </Logo>
       <Ul>
-        <NavLink className="navlink" to="/dashboard" style={activeStyles}>
+        <NavLink className="navlink" to="/" style={activeStyles}>
           <BiSolidDashboard /> Dashboard
         </NavLink>
         <NavLink className="navlink">

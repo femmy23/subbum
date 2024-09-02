@@ -13,11 +13,12 @@ export default function App() {
       <Routes>
         <Route index element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/support" element={<Support />} />
         <Route path="/TransactionHistory" element={<TransactionHistory />} />
         <Route path="/airtimeToCash" element={<AirtimeToCash />} />
+        <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
     </BrowserRouter>
   );
