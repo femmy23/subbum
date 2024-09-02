@@ -14,13 +14,6 @@ const FormRow = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
-const Span = styled.span`
-  font-size: 1rem;
-  font-weight: 600;
-  margin-right: 1rem;
-  color: #4169e1;
-`;
 const Section = styled.section`
   display: flex;
   flex-direction: column;

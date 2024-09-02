@@ -3,3 +3,19 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+a {
+  font-size: 1rem;
+  display: flex;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin: 0.4rem 0;
+}
+.navlink {
+  padding: 0.5rem 1rem;
+  color: #4c689e;
+  gap: 1rem;
+}
+.navlink:hover {
+  background-color: #4169e1;
+  color: #fff;
+}

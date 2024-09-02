@@ -1,17 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import {
-  FiArrowUp,
-  FiClipboard,
-  FiHeadphones,
-  FiLogOut,
-  FiNavigation,
-} from "react-icons/fi";
+import { FiClipboard, FiHeadphones, FiLogOut } from "react-icons/fi";
 import { BiBoltCircle, BiChevronDown, BiSolidDashboard } from "react-icons/bi";
 import { styled } from "styled-components";
-import Button from "./Button";
 import { FaPhone, FaRecycle, FaTv, FaWifi } from "react-icons/fa";
+import { useState } from "react";
 
 const Sidenav = styled.div`
   width: 17%;
@@ -27,20 +21,9 @@ const Ul = styled.ul`
   display: flex;
   flex-direction: column;
 `;
-const A = styled.a`
-  font-size: 1rem;
-  display: flex;
-  /* justify-content: space-around; */
-  gap: 1rem;
-  color: #4c689e;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin: 0.4rem 0;
-  &:hover {
-    background-color: #4169e1;
-    color: #fff;
-  }
-`;
+// const A = styled.a`
+
+// `;
 const Logo = styled.div`
   margin: 1rem;
 `;
@@ -49,67 +32,72 @@ const LogoImg = styled.img`
 `;
 
 export default function SideNav() {
+  const activeStyles = ({ isActive }) => {
+    return {
+      // fontSize: "1rem",
+      // display: "flex",
+      // gap: "1rem",
+      // color: "#4c689e",
+      // padding: "0.5rem 1rem",
+      // borderRadius: "0.5rem",
+      // textDecoration: "none",
+      // margin: "0.4rem 0",
+      color: !isActive ? "" : "#fff",
+      backgroundColor: !isActive ? "" : "#4169e1",
+    };
+  };
+
   return (
     <Sidenav>
       <Logo>
         <LogoImg src="./logo.png" alt="" />
       </Logo>
       <Ul>
-        <Link to="/dashboard" style={{ textDecoration: "none" }}>
-          <A>
-            <BiSolidDashboard /> Dashboard
-          </A>
-        </Link>
-        <Link style={{ textDecoration: "none" }}>
-          <A>
-            <FaPhone /> Buy Airtime <BiChevronDown />
-          </A>
-        </Link>
+        <NavLink className="navlink" to="/dashboard" style={activeStyles}>
+          <BiSolidDashboard /> Dashboard
+        </NavLink>
+        <NavLink className="navlink">
+          <FaPhone /> Buy Airtime <BiChevronDown />
+        </NavLink>
 
-        <Link style={{ textDecoration: "none" }}>
-          <A>
-            <FaWifi /> Buy Data <BiChevronDown />
-          </A>
-        </Link>
+        <NavLink className="navlink">
+          <FaWifi /> Buy Data <BiChevronDown />
+        </NavLink>
 
-        <Link style={{ textDecoration: "none" }}>
-          <A>
-            <FaTv /> TV Subscription <BiChevronDown />
-          </A>
-        </Link>
+        <NavLink className="navlink">
+          <FaTv /> TV Subscription <BiChevronDown />
+        </NavLink>
 
-        <Link style={{ textDecoration: "none" }}>
-          <A>
-            <BiBoltCircle /> Pay Electricity Bill <BiChevronDown />
-          </A>
-        </Link>
+        <NavLink className="navlink">
+          <BiBoltCircle /> Pay Electricity Bill <BiChevronDown />
+        </NavLink>
 
-        <Link to="/airtimeToCash" style={{ textDecoration: "none" }}>
-          <A>
-            <FaRecycle /> Airtime To Cash
-          </A>
-        </Link>
+        <NavLink className="navlink" to="/airtimeToCash" style={activeStyles}>
+          <FaRecycle /> Airtime To Cash
+        </NavLink>
 
-        <Link to="/TransactionHistory" style={{ textDecoration: "none" }}>
-          <A>
-            <FiClipboard /> Transaction History
-          </A>
-        </Link>
+        <NavLink
+          className="navlink"
+          to="/TransactionHistory"
+          style={activeStyles}
+        >
+          <FiClipboard /> Transaction History
+        </NavLink>
 
-        <Link to="/support" style={{ textDecoration: "none" }}>
-          <A>
-            <FiHeadphones /> Help & Support
-          </A>
-        </Link>
+        <NavLink className="navlink" to="/support" style={activeStyles}>
+          <FiHeadphones /> Help & Support
+        </NavLink>
       </Ul>
 
       <Logout>
-        <Link to="/login" style={{ textDecoration: "none" }}>
-          <A>
-            <FiLogOut />
-            Log Out <BiChevronDown />
-          </A>
-        </Link>
+        <NavLink
+          className="navlink"
+          to="/login"
+          style={{ textDecoration: "none" }}
+        >
+          <FiLogOut />
+          Log Out <BiChevronDown />
+        </NavLink>
       </Logout>
     </Sidenav>
   );
