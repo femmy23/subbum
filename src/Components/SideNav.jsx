@@ -5,7 +5,6 @@ import { FiClipboard, FiHeadphones, FiLogOut } from "react-icons/fi";
 import { BiBoltCircle, BiChevronDown, BiSolidDashboard } from "react-icons/bi";
 import { styled } from "styled-components";
 import { FaPhone, FaRecycle, FaTv, FaWifi } from "react-icons/fa";
-import { useState } from "react";
 
 const Sidenav = styled.div`
   width: 17%;
